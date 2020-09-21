@@ -33,13 +33,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Absurd`,
+        name: `Tegart Therapy Services`,
         short_name: `absurd`,
         start_url: `/`,
         background_color: `#8bd8ed`,
         theme_color: `#8bd8ed`,
         display: `minimal-ui`,
-        icon: `static/favicon.svg`,
+        icon: `src/images/art/noun_Lavender_3292934.png`,
       },
     },
     {

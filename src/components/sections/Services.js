@@ -5,32 +5,10 @@ import Img from 'gatsby-image';
 
 import { Section, Container } from '@components/global';
 
-const About = () => (
+const Services = () => (
   <StaticQuery
     query={graphql`
       query {
-        art_fast: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "fast" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
-
-        art_learn: file(
-          sourceInstanceName: { eq: "art" }
-          name: { eq: "learn_yourself" }
-        ) {
-          childImageSharp {
-            fluid(maxWidth: 760) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
-            }
-          }
-        }
-
         art_ideas: file(
           sourceInstanceName: { eq: "art" }
           name: { eq: "ideas" }
@@ -44,45 +22,44 @@ const About = () => (
       }
     `}
     render={data => (
-      <Section id="about">
+      <Section id="services">
         <Container>
-          {/* <Grid> */}
+          <Grid>
             <div>
               {/* <h2>Are you struggling to understand and cope with challenges in your personal or professional life?</h2> */}
-              <h3>Do you need help to overcome a personal crisis, 
-                stressful circumstance, increased anxiety, 
-                depression or a broken relationship?</h3>
+              <h2>Services</h2>
                 <br/>
+              <h3>
+              Tegart Therapy Services offers:
+              </h3>
               <p>
-              Whatever obstacle you may be facing in your life, 
-              therapy can help you overcome a personal crisis, 
-              stressful situation, or difficult time by increasing hope, 
-              understanding, skills, and connection with others. 
+              •	Individual Therapy</p><p>
+•	Family Therapy (for adults and children 16+)</p><p>
+•	In person, phone or virtual sessions available</p><p>
+
               </p>
               <br/>
+              <h3>Individual and Family Therapy</h3>
               <p>
-                And, as a therapist, Maureen Tegart may be able to help you. 
-                Through a therapy approach that has been described as 
-                “affirming, encouraging and non-judgmental”, 
-                Maureen will support you to explore options, identify strengths, 
-                develop skills and coping strategies, increase your resiliency, 
-                and create meaningful change for yourself and in your relationships with others.
+              Through single session consultations, short-term or longer term therapy for individuals or with families, Tegart Therapy Services can help you:</p><p>
+•	Understand and manage a wide range of emotional difficulties</p><p>
+•	Communicate better an reduce conflict with partners, children, parents</p><p>
+•	Increase flexibility and develop skills for various life challenges</p><p>
+•	Manage and reduce stress, anxiety and depression</p><p>
+•	Develop more meaningful community connections</p><p>
+•	Deal with loss and grief with greater self-compassion</p><p>
+•	Cope with trauma, experienced personally or witnessed</p><p>
+•	Overcome symptoms of trauma by working through complex feelings of fear, shame, betrayal and/or anger</p><p>
+•	Develop your self-worth and self-esteem</p><p>
+•	Find more satisfaction and enjoyment in life
+
               </p>
-              <br/>
-              <p>
-              Maureen Tegart utilizes a variety of approaches including:
-               CBT (cognitive behavioural therapy), Trauma Informed Therapy, 
-               Narrative Therapy and Emotional Focussed Therapy.
-              </p>
-              <br/>
-              <p>
-              Frequency and number of sessions may vary depending on your needs and goals.
-              </p>
+              
             </div>
             {/* <Art>
               <Img fluid={data.art_fast.childImageSharp.fluid} />
             </Art> */}
-          {/* </Grid> */}
+          </Grid>
           {/* <Grid inverse>
             <Art>
               <Img fluid={data.art_learn.childImageSharp.fluid} />
@@ -119,12 +96,12 @@ const About = () => (
 
 const Grid = styled.div`
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  grid-template-columns: 1fr;
   grid-gap: 40px;
-  text-align: right;
+  text-align: left;
   align-items: center;
   justify-items: center;
-  margin: 24px 0;
+  margin: 0 0;
 
   ${props =>
     props.inverse &&
@@ -141,6 +118,7 @@ const Grid = styled.div`
     grid-template-columns: 1fr;
     text-align: left;
     margin-bottom: 96px;
+    margin-top: 24px;
 
     &:last-child {
       margin-bottom: 24px;
@@ -154,7 +132,7 @@ const Grid = styled.div`
         }
     `}
   }
-`;
+`;//grid-template-columns: 3fr 2fr; text-align: right; margin: 24px 0;, added margin-top to media
 
 const Art = styled.figure`
   margin: 0;
@@ -162,4 +140,4 @@ const Art = styled.figure`
   width: 100%;
 `;
 
-export default About;
+export default Services;

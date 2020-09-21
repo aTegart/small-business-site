@@ -65,6 +65,9 @@ export const MobileMenu = styled.div`
 export const Brand = styled.div`
   font-family: ${props => props.theme.font.primary};
   ${props => props.theme.font_size.large};
+  @media (max-width: ${props => props.theme.screen.sm}) {
+    ${props => props.theme.font_size.regular}
+  }
 `;
 
 export const Mobile = styled.div`
