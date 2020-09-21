@@ -68,6 +68,11 @@ export const Brand = styled.div`
   @media (max-width: ${props => props.theme.screen.sm}) {
     ${props => props.theme.font_size.regular}
   }
+
+  a {
+    text-decoration: none;
+    color: ${props => props.theme.color.black.regular};
+  }
 `;
 
 export const Mobile = styled.div`

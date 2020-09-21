@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import Scrollspy from 'react-scrollspy';
+import { Link } from "gatsby";
 
 import { Container } from '@components/global';
 import {
@@ -15,7 +16,7 @@ import {
 
 import { ReactComponent as MenuIcon } from '@static/icons/menu.svg';
 
-const NAV_ITEMS = ['Background', 'Services', 'Team', 'FAQ'];
+const NAV_ITEMS = ['Background', 'Services'];
 
 class Navbar extends Component {
   state = {
@@ -32,10 +33,10 @@ class Navbar extends Component {
     }
   };
 
-  getNavAnchorLink = item => (
-    <AnchorLink href={`/${item.toLowerCase()}`} onClick={this.closeMobileMenu}>
+  getNavLink = item => (
+    <Link to={`/${item.toLowerCase()}`} onClick={this.closeMobileMenu}>
       {item}
-    </AnchorLink>
+    </Link>
   );
 
   getNavList = ({ mobile = false }) => ( //this just scrolls, must be entirely replaced
@@ -47,7 +48,7 @@ class Navbar extends Component {
         offset={-64}
       >
         {NAV_ITEMS.map(navItem => (
-          <NavItem key={navItem}>{this.getNavAnchorLink(navItem)}</NavItem>
+          <NavItem key={navItem}>{this.getNavLink(navItem)}</NavItem>
         ))}
       </Scrollspy>
     </NavListWrapper>
@@ -59,7 +60,7 @@ class Navbar extends Component {
     return (
       <Nav {...this.props}>
         <StyledContainer>
-          <Brand>Tegart Therapy Services</Brand>
+          <Brand><Link to="/">Tegart Therapy Services</Link></Brand>
           <Mobile>
             <button onClick={this.toggleMobileMenu} style={{ color: 'black' }}>
               <MenuIcon />
