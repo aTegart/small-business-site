@@ -1,0 +1,4 @@
+---
+template: simple
+message: exampletext
+---
