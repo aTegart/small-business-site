@@ -21,3 +21,10 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'pages'
+    label: 'Pages'
+    folder: 'src/pages'
+    create: true
+    fields:
+      - { label: 'Template', name: 'template', widget: 'string' }
+      - { label: 'Message', name: 'message', widget: 'markdown' }
