@@ -53,21 +53,30 @@ const Footer = () => (
           <StyledContainer>
             <Copyright>
               <h2>Tegart Therapy Services</h2>
-              <span>
+              
+              
+              {/* <span>
                 Illustrations by
                 {` `}
                 <ExternalLink href="https://twitter.com/diana_valeanu">
                   @diana_valeanu
                 </ExternalLink>
-              </span>
+              </span> */}
             </Copyright>
-            <SocialIcons>
+            <Contact>
+              <p>
+                555-123-4567 <br/>
+                123 Broadway Rd,<br/> Orangeville, Ontario
+              </p>
+            </Contact>
+            
+            {/* <SocialIcons>
               {SOCIAL.map(({ icon, link }) => (
                 <ExternalLink key={link} href={link}>
                   <img src={icon} alt="link" />
                 </ExternalLink>
               ))}
-            </SocialIcons>
+            </SocialIcons> */}
           </StyledContainer>
         </FooterWrapper>
       </React.Fragment>
@@ -103,6 +112,11 @@ const Copyright = styled.div`
     text-decoration: none;
     color: inherit;
   }
+`;
+
+const Contact = styled.div`
+  font-family: ${props => props.theme.font.secondary};
+  text-align: right;
 `;
 
 const Art = styled.figure`
